@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trainee Attendance System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+<body>
+
+<h2>Trainee Login</h2>
+
+<input type="text" id="uid" placeholder="Enter Unique ID">
+<button onclick="verifyID()">Verify</button>
+
+<div id="attendanceForm" style="display:none;">
+  <h3>Attendance Form</h3>
+  <input type="text" id="name" placeholder="Name"><br><br>
+  <input type="text" id="cits" placeholder="CITS No"><br><br>
+
+  <select id="status">
+    <option value="Present">Present</option>
+    <option value="Absent">Absent</option>
+  </select><br><br>
+
+  <button onclick="submitAttendance()">Submit Attendance</button>
+</div>
+
+
+<div id="qrcode"></div>
+<script>
+let uniqueID = "TR001";
+new QRCode(
+  document.getElementById("qrcode"),
+  "index.html?uid=" + uniqueID
+);
+</script>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
