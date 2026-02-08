@@ -60,7 +60,7 @@ window.onload = function () {
 };
 
 function submitAttendance() {
-  fetch("https://script.google.com/macros/s/AKfycbwLRj12h9jUWYuUd-cHxHw_JKksVVwc0VEsjxdfVUWZwTzHyBK_Z5VfvEKuK0AHnMX3/exec", {
+  fetch(" https://script.google.com/macros/s/AKfycbxWVSQRwWM1pxJEEmMTMMfmOm0WNAL0mGISKskAjV5CHUPtR8nZxegkuVWrzsqgDHoi6g/exec", {
     method: "POST",
     body: new URLSearchParams({
       name: document.getElementById("name").value,
