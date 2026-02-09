@@ -34,19 +34,18 @@
 
 // https://script.google.com/macros/s/AKfycbwLRj12h9jUWYuUd-cHxHw_JKksVVwc0VEsjxdfVUWZwTzHyBK_Z5VfvEKuK0AHnMX3/exec
 
-let validIDs = ["TR001", "TR002", "TR003"];
-
 function verifyID() {
   let uid = document.getElementById("uid").value.trim();
-  console.log("Verify clicked, UID =", uid);
 
-  if (validIDs.includes(uid)) {
-    document.getElementById("attendanceForm").style.display = "block";
-    alert("ID verified, form opened");
-  } else {
-    alert("Invalid Unique ID");
+  if (uid === "") {
+    alert("Please enter Unique ID");
+    return;
   }
+
+  // direct form open
+  document.getElementById("attendanceForm").style.display = "block";
 }
+
 
 // QR se aayi ID auto-fill + auto-verify
 window.onload = function () {
@@ -60,7 +59,7 @@ window.onload = function () {
 };
 
 function submitAttendance() {
-  fetch(" https://script.google.com/macros/s/AKfycbxWVSQRwWM1pxJEEmMTMMfmOm0WNAL0mGISKskAjV5CHUPtR8nZxegkuVWrzsqgDHoi6g/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbyXG4aL2k0UY1KENyy6432oUCpM9dc4xHXJG0h_sMt5h-sDztZROdUVLNnd3lGR9RY23g/exec", {
     method: "POST",
     body: new URLSearchParams({
       name: document.getElementById("name").value,
